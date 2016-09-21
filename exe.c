@@ -11,11 +11,11 @@ int main(){
 	int c_especiais=0;
 
 	char frase_qualquer[100];
-	char f_i[100], m[100], ms[100];
+	char f_i[100], m[100];
 	
-	char vogais_maiusculas[4] = {'A', 'E', 'I', 'O', 'U'};
-	char vogais_minusculas[4] = {'a', 'e', 'i', 'o', 'u'};
-	char caracteres_especiais[14] = {'!', '@', '#', '$',  '%', '¨', '&', '*', '(', ')', '_', '-', '=', '{', '}'};
+	//char vogais_maiusculas[4] = {'A', 'E', 'I', 'O', 'U'};
+	//char vogais_minusculas[4] = {'a', 'e', 'i', 'o', 'u'};
+	//char caracteres_especiais[14] = {'!', '@', '#', '$',  '%', '¨', '&', '*', '(', ')', '_', '-', '=', '{', '}'};
 	
 	printf("Digite uma frase qualquer !\n");
 	gets(frase_qualquer);
@@ -25,7 +25,7 @@ int main(){
 		size_string++;
 		a++;
 	}
-	printf("%d\n", size_string);
+	printf(" Tamanho da string %d\n", size_string);
 	
 	b = 0;
 	
@@ -35,10 +35,28 @@ int main(){
     	b++;
 		// inverte a string
 	}
-	for(a =0; a <= strlen(frase_qualquer) ; a++){
-		 m[a]=toupper(frase_qualquer[a]);
-		 //transforma a string em maiúscula
+	
+
+	
+
+	for(a =0; a <= strlen(frase_qualquer) -1; a++){
+		 if(frase_qualquer[a] < 90 && frase_qualquer[a] >= 65){
+		 	printf("%c", frase_qualquer[a]);
+		 }else if(frase_qualquer[a] >= 90 && frase_qualquer[a] <= 122){
+		 
+		    printf("%c", frase_qualquer[a] -32);
+	    }else if(frase_qualquer[a] == 32){
+	    	printf("%c", frase_qualquer[a]);
+	    	
+		}
+	    
 	}
+		 //transforma a string em maiúscula
+		 
+	//	 printf("%d", ' ');
+	
+
+/*
 	
 	for(a =0; a <= size_string ; a++){
 		 ms[a]=tolower(frase_qualquer[a]);
@@ -98,13 +116,15 @@ int main(){
 
 	printf("O tamanho da string:  %d\n", size_string);
 	printf("Frase invertida: %s\n", f_i);
-	printf("Letras maiúsculas: %s\n", m);
+	printf("Letras maiúsculas: %c\n", test);
 	printf("Letras minúsculas %s\n", ms);
 	printf("Quantidade de vogais maiúsculas %d e vogais minúsculas %d\n", n_maiusc,n_minus);
 	printf("Quantidade de letras maiúsculaS %d\n", l_maius );
 	printf("Quantidade de letras minúscular %d\n", l_minus);
 	printf("Quantidade de números na string %d\n", coun_n);
 	printf("Quantidade de caracteres especiais encontrados na string: %d\n", c_especiais);
+	
+	*/
 
 }
 
