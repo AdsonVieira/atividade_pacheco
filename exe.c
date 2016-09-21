@@ -15,7 +15,7 @@ int main(){
 	
 	//char vogais_maiusculas[4] = {'A', 'E', 'I', 'O', 'U'};
 	//char vogais_minusculas[4] = {'a', 'e', 'i', 'o', 'u'};
-	//char caracteres_especiais[14] = {'!', '@', '#', '$',  '%', '¨', '&', '*', '(', ')', '_', '-', '=', '{', '}'};
+
 	
 	printf("Digite uma frase qualquer !\n");
 	gets(frase_qualquer);
@@ -25,21 +25,25 @@ int main(){
 		size_string++;
 		a++;
 	}
-	printf(" Tamanho da string %d\n", size_string);
+	printf("Tamanho da string %d\n", size_string);
 	
 	b = 0;
 	
 	
+	printf("\nString invertida :");
     for(a = size_string -1; a >= 0; a--){
     	f_i[b]= frase_qualquer[a];
+    	printf("%c", f_i[b]);
     	b++;
+    	
 		// inverte a string
 	}
 	
 
-	
+	printf("\nFrase maiúscula :");
 
 	for(a =0; a <= strlen(frase_qualquer) -1; a++){
+		//transforma a string em maiúscula
 		 if(frase_qualquer[a] < 90 && frase_qualquer[a] >= 65){
 		 	printf("%c", frase_qualquer[a]);
 		 }else if(frase_qualquer[a] >= 90 && frase_qualquer[a] <= 122){
@@ -51,19 +55,27 @@ int main(){
 		}
 	    
 	}
-		 //transforma a string em maiúscula
+	
+	printf("\nFrase mainúscula :");
+	for(a =0; a <= strlen(frase_qualquer) -1; a++){
+		//transforma a string em minúscula
+		 if(frase_qualquer[a] < 90 && frase_qualquer[a] >= 65){
+		 	printf("%c", frase_qualquer[a] + 32);
+		 }else if(frase_qualquer[a] >= 90 && frase_qualquer[a] <= 122){
 		 
-	//	 printf("%d", ' ');
-	
-
-/*
-	
-	for(a =0; a <= size_string ; a++){
-		 ms[a]=tolower(frase_qualquer[a]);
-		 //transforma a string em minúscula
+		    printf("%c", frase_qualquer[a]);
+	    }else if(frase_qualquer[a] == 32){
+	    	printf("%c", frase_qualquer[a]);
+	    	
+		}
+	    
 	}
-	
+		 
+		 
 
+
+	
+ /*
 	for(a =0; a <= size_string -1; a++){
 		if (isupper(frase_qualquer[a])){
 		// verifica se a string contém vogais e quantas vogais maiúsculas e minusculas existem
@@ -114,9 +126,7 @@ int main(){
 
 	
 
-	printf("O tamanho da string:  %d\n", size_string);
-	printf("Frase invertida: %s\n", f_i);
-	printf("Letras maiúsculas: %c\n", test);
+	
 	printf("Letras minúsculas %s\n", ms);
 	printf("Quantidade de vogais maiúsculas %d e vogais minúsculas %d\n", n_maiusc,n_minus);
 	printf("Quantidade de letras maiúsculaS %d\n", l_maius );
