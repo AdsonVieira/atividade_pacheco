@@ -20,10 +20,13 @@ int main(){
 	
 	
 
+	
+	
+
     
 		inicio:
 		printf("Digite uma frase qualquer !\n");
-		gets(frase_qualquer);
+		scanf("%[^\n]s", frase_qualquer);
 		
 	
 		while(frase_qualquer[a] != '\0'){
@@ -32,7 +35,21 @@ int main(){
 		}
 		printf("Tamanho da string %d\n", size_string);
 		
+		/*
 	
+		// Melhorar código 	
+		for(a=0;a< tam;a++){
+			if(string[a]>=48 && string[a]<=57){
+				//números
+			}else if(string[a]>=65 && string[a]<=90){
+				// letras minúsculas
+			}else if(string[a]>=97 && string[a]<=122){
+				// letras maiúsculas
+			}else if(string[a]){
+				esp++;
+			}
+		}
+		*/
 		
 		printf("\nString invertida :");
 		for(a = size_string -1; a >= 0; a--){
@@ -136,7 +153,7 @@ int main(){
 		   
 		}
 		
-		if(pal == size_string -1){
+		if(pal == size_string){
 			printf("é um PALÍNDROMO", setlocale(LC_ALL, "Portuguese"));
 		}else{
 			printf("Não é um PALÍNDROMO", setlocale(LC_ALL, "Portuguese"));
@@ -208,6 +225,7 @@ int main(){
 		}else{
 			return 0;
 		}
+		
 }
 
 
