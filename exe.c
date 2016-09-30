@@ -1,9 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include <locale.h>
+#include <conio.c>
+
+// Nome do aluno: Adson dos Santos Vieira
+// Matrícula : 144161041
 int main(){
 
-	  setlocale(LC_ALL,"Portuguese");
+	  setlocale(LC_ALL,"");
+	  
 
 	int a=0, b=0, n_maiusc =0, n_minus=0;
 	int size_string=0, l_maius=0, l_minus=0, coun_n=0, anagrama=0, pal=0;
@@ -11,59 +16,32 @@ int main(){
 
 	char frase_qualquer[100], frase_minus[100],frase_maius[100];
 	char outra_frase[100];
+	char desejo[20];
 
 	frase_qualquer[0] = '\0';
 	outra_frase[0] = '\0';
+	frase_minus[0] = '\0';
+	frase_maius[0] = '\0';
 
 	int vogais_maiusculas[5] = {65, 69, 73, 79, 85};
 	int vogais_minusculas[5] = {97, 101, 105, 111, 117};
 
-<<<<<<< HEAD
+		textbackground(1);
+		textcolor(128);
 
-
-		printf("Digite uma frase qualquer !\n");
-		gets(frase_qualquer);
-
-
-=======
-	
-	
-
-    
 		inicio:
 		printf("Digite uma frase qualquer !\n");
-		scanf("%[^\n]s", frase_qualquer);
-		
+		fflush(stdin);
+		gets(frase_qualquer);
+			
 	
->>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
 		while(frase_qualquer[a] != '\0'){
 			size_string++;
 			a++;
 		}
-		printf("Tamanho da string %d\n", size_string);
-<<<<<<< HEAD
-
-
-
-=======
-		
-		/*
 	
-		// Melhorar código 	
-		for(a=0;a< tam;a++){
-			if(string[a]>=48 && string[a]<=57){
-				//números
-			}else if(string[a]>=65 && string[a]<=90){
-				// letras minúsculas
-			}else if(string[a]>=97 && string[a]<=122){
-				// letras maiúsculas
-			}else if(string[a]){
-				esp++;
-			}
-		}
-		*/
-		
->>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
+
+
 		printf("\nString invertida :");
 		for(a = size_string ; a > 0; a--){
 	       	printf("% c", frase_qualquer[a]);
@@ -73,6 +51,7 @@ int main(){
 
 		for(a =0; a <=size_string; a++){
 			// Transformando a frase em maiúsculas
+			//verifica o intervalo para identifica o caractere e assim converter
 			if((frase_qualquer[a] >=0 && frase_qualquer[a] <= 64) || (frase_qualquer[a] >=65 && frase_qualquer[a] <= 90)){
 				frase_maius[a]= frase_qualquer[a];
 			}else if(frase_qualquer[a] >=97 && frase_qualquer[a] <= 122){
@@ -82,6 +61,7 @@ int main(){
 
 		for(a =0; a <=size_string; a++){
 			// Transformando a frase em minúscula
+			//verifica o intervalo para identifica o caractere e assim converter
 			if((frase_qualquer[a] >=0 && frase_qualquer[a] <= 64) || (frase_qualquer[a] >=97 && frase_qualquer[a] <= 122)){
 				frase_minus[a]= frase_qualquer[a];
 			}else if(frase_qualquer[a] >=65 && frase_qualquer[a] <= 90){
@@ -92,6 +72,7 @@ int main(){
 
 		for(a =0; a < size_string ; a++){
 			// conta o número de vogais minusculas
+			// varre um vetor com todas as vogais e faz uma comparaçao
 			if(frase_qualquer[a] >= 65 && frase_qualquer[a] <= 90){
 				for(b = 0; b <= 4; b++){
 					if(frase_qualquer[a] == vogais_maiusculas[b]){
@@ -110,6 +91,7 @@ int main(){
 
 
 		// Esse bloco de comando verifica o número de caracteres especiais letras maiúsculas e minúscula da string
+
 		for(a=0;a <= size_string;a++){
 			if(frase_qualquer[a]>=48 && frase_qualquer[a]<=57){
 				//números
@@ -144,14 +126,10 @@ int main(){
 		   }
 
 		}
-<<<<<<< HEAD
-		if(pal == size_string ){
-			printf("é um PALÍNDROMO");
-=======
 		
 		if(pal == size_string){
 			printf("é um PALÍNDROMO", setlocale(LC_ALL, "Portuguese"));
->>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
+
 		}else{
 			printf("Não é um PALÍNDROMO");
 		}
@@ -160,6 +138,7 @@ int main(){
 		// Verificando existência de anagrama
 
 		printf("\nDigite outra string: \n");
+		fflush(stdin);
 		gets(outra_frase);
 
 		for(a =0; outra_frase[a] !='\0'; a++){
@@ -178,6 +157,7 @@ int main(){
 						aux = frase_qualquer[a];
 						frase_qualquer[a] = frase_qualquer[b];
 						frase_qualquer[b] = aux;
+						//ordenando a string para fazer a comparação
 					}
 				}
 			}
@@ -196,28 +176,36 @@ int main(){
 				for(b=0; b <= size_string; b++){
 					if(frase_qualquer[a] == outra_frase[b]){
 						anagrama++;
+						// realizando a comparação de cada elemento da string 
 					}
 				}
 			}
 
-			if(anagrama >= size_string && anagrama >=size_string_t){
-				printf("SÃO ANAGRAMAS UM DO OUTRO!.\n ");
-			}else{
-
-				printf("Não são anagramas\n");
-
-			}
-
+        }
+        
+		if(anagrama >= size_string && anagrama >=size_string_t){
+			printf("SÃO ANAGRAMAS UM DO OUTRO!.\n ");
 		}else{
-
+		
 			printf("Não são anagramas\n");
 		}
-<<<<<<< HEAD
-
-=======
 		
->>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
-}
+		printf("Deseja continuar? Digite s ou n\n");
+		fflush(stdin);
+		gets(desejo);
+	
+		if(desejo[0] == 's'){
+			system("cls");
+			goto inicio;
+			print("1");
+		}else{
+			return 0;
+		}
+		
+		frase_qualquer[0] = '\0';
+	    outra_frase[0] = '\0';
+	
+} 
 
 
 
