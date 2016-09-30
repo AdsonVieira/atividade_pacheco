@@ -18,20 +18,52 @@ int main(){
 	int vogais_maiusculas[5] = {65, 69, 73, 79, 85};
 	int vogais_minusculas[5] = {97, 101, 105, 111, 117};
 
+<<<<<<< HEAD
 
 
 		printf("Digite uma frase qualquer !\n");
 		gets(frase_qualquer);
 
 
+=======
+	
+	
+
+    
+		inicio:
+		printf("Digite uma frase qualquer !\n");
+		scanf("%[^\n]s", frase_qualquer);
+		
+	
+>>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
 		while(frase_qualquer[a] != '\0'){
 			size_string++;
 			a++;
 		}
 		printf("Tamanho da string %d\n", size_string);
+<<<<<<< HEAD
 
 
 
+=======
+		
+		/*
+	
+		// Melhorar código 	
+		for(a=0;a< tam;a++){
+			if(string[a]>=48 && string[a]<=57){
+				//números
+			}else if(string[a]>=65 && string[a]<=90){
+				// letras minúsculas
+			}else if(string[a]>=97 && string[a]<=122){
+				// letras maiúsculas
+			}else if(string[a]){
+				esp++;
+			}
+		}
+		*/
+		
+>>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
 		printf("\nString invertida :");
 		for(a = size_string ; a > 0; a--){
 	       	printf("% c", frase_qualquer[a]);
@@ -112,8 +144,14 @@ int main(){
 		   }
 
 		}
+<<<<<<< HEAD
 		if(pal == size_string ){
 			printf("é um PALÍNDROMO");
+=======
+		
+		if(pal == size_string){
+			printf("é um PALÍNDROMO", setlocale(LC_ALL, "Portuguese"));
+>>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
 		}else{
 			printf("Não é um PALÍNDROMO");
 		}
@@ -174,7 +212,11 @@ int main(){
 
 			printf("Não são anagramas\n");
 		}
+<<<<<<< HEAD
 
+=======
+		
+>>>>>>> dc9008c42de44afcb1f4f3ee20e06a0f4cb91e11
 }
 
 
